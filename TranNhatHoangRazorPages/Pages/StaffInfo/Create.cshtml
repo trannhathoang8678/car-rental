@@ -1,0 +1,67 @@
+﻿@page
+@model TranNhatHoangRazorPages.Pages.StaffInfo.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>StaffAccount</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StaffAccount.StaffId" class="control-label"></label>
+                <input asp-for="StaffAccount.StaffId" class="form-control" />
+                <span asp-validation-for="StaffAccount.StaffId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffAccount.FullName" class="control-label"></label>
+                <input asp-for="StaffAccount.FullName" class="form-control" />
+                <span asp-validation-for="StaffAccount.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffAccount.Email" class="control-label"></label>
+                <input asp-for="StaffAccount.Email" class="form-control" />
+                <span asp-validation-for="StaffAccount.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffAccount.Password" class="control-label"></label>
+                <input asp-for="StaffAccount.Password" class="form-control" />
+                <span asp-validation-for="StaffAccount.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffAccount.Role" class="control-label"></label>
+                <input asp-for="StaffAccount.Role" class="form-control" />
+                <span asp-validation-for="StaffAccount.Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+<script>
+        $(document).ready(function () {
+            $("#create-form").submit(function (event) {
+                // Check for null or empty values
+                if ($("#StaffAccount_StaffId").val().trim() == "" || $("#StaffAccount_StaffId").val().trim() == null ||
+                    $("#StaffAccount_FullName").val().trim() == "" || $("#StaffAccount_FullName").val().trim() == null ||
+                    $("#StaffAccount_Email").val().trim() == "" || $("#StaffAccount_Email").val().trim() == null ||
+                    $("#StaffAccount_Password").val().trim() == "" || $("#StaffAccount_Password").val().trim() == null ||
+                    $("#StaffAccount_Role").val().trim() == "" || $("#StaffAccount_Role").val().trim() == null) {
+                    event.preventDefault();
+                    alert("Please fill out all fields.");
+                }
+            });
+        });
+</script>

@@ -1,0 +1,31 @@
+﻿@page
+@model TranNhatHoangRazorPages.Pages.Login.LoginModel
+@{
+}
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @Model.ErrorMessage
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary" name="loginType" value="customer">Login as Customer</button>
+    <button type="submit" class="btn btn-primary" name="loginType" value="staff">Login as Staff</button>
+    
+</form>
